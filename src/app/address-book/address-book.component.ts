@@ -1,18 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from '../models/contact';
 import { AddressBookDataService } from '../services/address-book-data.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'address-book',
   templateUrl: './address-book.component.html',
-  styleUrls: ['./address-book.component.css']
+  styleUrls: ['./address-book.component.css'],
+  providers: [AuthService],
 })
 export class AddressBookComponent implements OnInit {
   contact:Contact = new Contact();
-  constructor(private dataService: AddressBookDataService) { }
+  constructor(private dataService: AddressBookDataService,private AuthService: AuthService) { }
 
   ngOnInit() {
   }
+
+  isAutorizzato() :boolean
+  {
+    return this.AuthService.getAuth();
+  }
+
 
   saveContact(event) {
     if(event.mode === "new") {
