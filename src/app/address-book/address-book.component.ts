@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Contact } from '../models/contact';
 import { AddressBookDataService } from '../services/address-book-data.service';
 import { AuthService } from '../auth.service';
+import { Router} from "@angular/router";
 
 @Component({
   selector: 'address-book',
@@ -11,14 +12,13 @@ import { AuthService } from '../auth.service';
 })
 export class AddressBookComponent implements OnInit {
   contact:Contact = new Contact();
-  constructor(private dataService: AddressBookDataService,private AuthService: AuthService) { }
+  constructor(private dataService: AddressBookDataService,private AuthService: AuthService, private router: Router,) { }
 
   ngOnInit() {
-  }
-
-  isAutorizzato() :boolean
-  {
-    return this.AuthService.getAuth();
+    if(!(this.AuthService.getAuth))
+    {
+      this.router.navigate(['/login']);
+    }
   }
 
 
