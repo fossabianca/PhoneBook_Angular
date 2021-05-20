@@ -19,12 +19,16 @@ export class SaveContactComponent implements OnInit {
   }
 
   saveContact() {
-    const mode = this.contact.id ? "edit" : "new";
-    this.save.emit({
-      mode: mode,
-      contact: this.contact
-    });
-    this.contact = new Contact();
+    if(this.contact.firstName != "" && this.contact.lastName != "" && this.contact.phone != "" && this.contact.country != "")
+    {
+      const mode = this.contact.id ? "edit" : "new";
+      this.save.emit({
+        mode: mode,
+        contact: this.contact
+      });
+      this.contact = new Contact();
+    }
+    
   }
 
 }

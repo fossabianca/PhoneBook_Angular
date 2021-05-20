@@ -5,7 +5,6 @@ export class AuthService {
   auth: boolean;
 
   constructor() {
-    this.auth = false;
    }
 
   setAuth(state: boolean) {

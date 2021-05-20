@@ -15,10 +15,10 @@ export class AddressBookComponent implements OnInit {
   constructor(private dataService: AddressBookDataService,private AuthService: AuthService, private router: Router,) { }
 
   ngOnInit() {
-    if(!(this.AuthService.getAuth()))
-    {
-      this.router.navigate(['/login']);
-    }
+    //if(!(this.isAutorizzato()))
+    //{
+    //   this.router.navigate(['/login']);
+    //}
   }
 
 
@@ -42,4 +42,7 @@ export class AddressBookComponent implements OnInit {
     return this.dataService.getContacts();
   }
 
+  isAutorizzato(): boolean {
+    return this.AuthService.getAuth();
+  }  
 }
