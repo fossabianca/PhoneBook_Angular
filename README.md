@@ -7,5 +7,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Run `ng build` to build the project.
 
 ## Site
-
-fossabianca-phonebook.netlify.app/
+https://fossabianca-phonebook.netlify.app/
