@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   autorizza() {
-    if (this.user == "test" && this.pwd == "test")
+    if (this.user == "admin" && this.pwd == "admin")
     {
      this.AuthService.setAuth(true);
       this.router.navigate(['/addressBook']);
