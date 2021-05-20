@@ -15,7 +15,7 @@ export class AddressBookComponent implements OnInit {
   constructor(private dataService: AddressBookDataService,private AuthService: AuthService, private router: Router,) { }
 
   ngOnInit() {
-    if(!(this.AuthService.getAuth))
+    if(!(this.AuthService.getAuth()))
     {
       this.router.navigate(['/login']);
     }

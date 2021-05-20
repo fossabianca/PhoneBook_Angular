@@ -15,14 +15,14 @@ export class LoginComponent implements OnInit {
   constructor(private AuthService: AuthService, private router: Router,) { }
 
  ngOnInit() {
-   this.AuthService.setAuth(false);
+  this.AuthService.setAuth(false);
 
   }
 
   autorizza() {
     if (this.user == "test" && this.pwd == "test")
     {
-      this.AuthService.setAuth(true);
+     this.AuthService.setAuth(true);
       this.router.navigate(['/addressBook']);
     }
     else
